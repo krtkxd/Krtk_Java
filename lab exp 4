@@ -1,0 +1,36 @@
+  class Product {
+    int productID;
+    String productName;
+    double price;
+    
+    Product(int productID, String productName, double price) {
+        this.productID = productID;
+        this.productName = productName;
+        this.price = price;
+    }
+
+    static class Electronics extends Product {
+        int warranty;
+        
+        Electronics(int productID, String productName, double price, int warranty) {
+            super(productID, productName, price);
+            this.warranty = warranty;
+        }
+    }
+
+    static class Clothing extends Product {
+        String size;
+        
+        Clothing(int productID, String productName, double price, String size) {
+            super(productID, productName, price);
+            this.size = size;
+        }
+    }
+}
+
+public class OnlineStore {
+    public static void main(String[] args) {
+        Product.Electronics lappy = new Product.Electronics(6969, "lappy", 50.00, 12);
+        Product.Clothing Shirt = new Product.Clothing(102, "Shirt", 20.00, "small");
+    }
+}
